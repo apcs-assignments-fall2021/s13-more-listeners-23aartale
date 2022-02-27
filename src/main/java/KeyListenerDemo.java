@@ -31,9 +31,17 @@ public class KeyListenerDemo {
 
             @Override
             public void keyPressed(KeyEvent e) {
-                field1.setText(e.getKeyCode() + "");
-            }
 
+                if (e.getKeyCode() == ' ') {
+                    field1.setText("You typed a space!");
+                }
+                else if (e.getKeyCode() == 'A' || e.getKeyCode() == 'E' || e.getKeyCode() == 'I' || e.getKeyCode() == 'O' || e.getKeyCode() == 'U'){
+                    field1.setText("You typed a vowel!");
+                }
+                else{
+                    field1.setText("That's not a vowel!");
+                }
+            }
             @Override
             public void keyReleased(KeyEvent e) {
 

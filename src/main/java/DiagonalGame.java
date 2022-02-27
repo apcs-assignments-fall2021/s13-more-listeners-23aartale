@@ -21,7 +21,7 @@ public class DiagonalGame {
 
     public DiagonalGame() {
         // Set up the frame
-        frame = new JFrame("Mouse Listener Demo");
+        frame = new JFrame("Diagonal Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Set up components/panels
@@ -35,7 +35,34 @@ public class DiagonalGame {
         // Set up MouseListener
         panel1.addMouseListener(new MouseListener() {
             @Override
+
             public void mouseClicked(MouseEvent e) {
+                double P = 501;
+                for (int i = 0; i < 500; i++) {
+                    double W = Math.sqrt(Math.pow(i - e.getX(), 2.0) + Math.pow(i - e.getY(), 2.0));
+
+                    if (W < P) {
+                        P = W;
+                    }
+                }
+                if (P > 50){
+                    field1.setText("Bad!");
+                    }
+                else if (P < 50 && P > 20){
+                        field1.setText("Okay");
+                    }
+                else if (P < 20 & P > 10){
+                        field1.setText("Good");
+                    }
+                else if (P < 10 && P > 5){
+                        field1.setText("Great");
+                    }
+                else if (P < 5 && P > 1){
+                        field1.setText("Excellent");
+                    }
+                else{
+                    field1.setText("Perfect");
+                }
 
             }
 

@@ -25,7 +25,7 @@ public class MouseListenerDemo {
         panel1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                field1.setText("X: " + e.getX() + ", Y: " + e.getY());
             }
 
             @Override
